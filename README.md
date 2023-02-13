@@ -1,4 +1,4 @@
-![GitHub Actions Workflow](https://https://github.com/alexmkio/template-vite-react-vitest/actions/workflows/ci.yml/badge.svg)
+![GitHub Actions Workflow](https://github.com/alexmkio/template-vite-react-vitest/actions/workflows/ci.yml/badge.svg)
 
 # template-vite-react-vitest
 ## Dependencies
