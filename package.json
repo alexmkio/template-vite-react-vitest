@@ -8,8 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:cov": "vitest run --coverage && open './coverage/index.html'",
-    "test:ci": "vitest run"
+    "test:ci": "vitest run",
+    "test:cov": "vitest run --coverage && open './coverage/index.html'"
   },
   "dependencies": {
     "react": "^18.2.0",
