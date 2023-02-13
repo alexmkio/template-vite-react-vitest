@@ -1,14 +1,20 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, LoaderFunction } from "react-router-dom";
 import { data } from "../assets/dataset";
-import { ParamsTyping, DogTyping } from "../types";
+import { DogTyping } from "../types";
 
-export async function loader({ params }: ParamsTyping) {
-  let dog = data.find((e) => e.id === Number(params.dogId));
-  return dog;
-}
+export type LoaderData<TLoaderFn extends LoaderFunction> = Awaited<
+  ReturnType<TLoaderFn>
+> extends Response | infer D
+  ? D
+  : never;
+
+export const loader = (async (args) => {
+  let dog = data.find((e) => e.id === Number(args.params.dogId));
+  return dog as DogTyping;
+}) satisfies LoaderFunction;
 
 function Dog() {
-  const dog = useLoaderData() as DogTyping;
+  const dog = useLoaderData() as LoaderData<typeof loader>;
 
   return (
     <>
